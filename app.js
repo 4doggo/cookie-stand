@@ -18,7 +18,6 @@ var seattle = {
     var total = 0;
     for (var i = 0; i < this.cookiesPerHour.length; i++) {
       total = total + this.cookiesPerHour[i];
-      console.log(total);
     }
     return total;
   }
