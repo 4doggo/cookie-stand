@@ -12,7 +12,7 @@ var seattle = {
     },
 
     productRandomcust: function () {
-        return this.randomcust() * this.avg;
+        return Math.round(this.randomcust() * this.avg);
     },
 };
 
@@ -26,7 +26,7 @@ var tokyo = {
     },
 
     productRandomcust: function () {
-        return this.randomcust() * this.avg;
+        return Math.round(this.randomcust() * this.avg);
     },
 };
 
@@ -40,7 +40,7 @@ var dubai = {
     },
 
     productRandomcust: function () {
-        return this.randomcust() * this.avg;
+        return Math.round(this.randomcust() * this.avg);
     },
 };
 
@@ -54,7 +54,7 @@ var paris = {
     },
 
     productRandomcust: function () {
-        return this.randomcust() * this.avg;
+        return Math.round(this.randomcust() * this.avg);
     },
 };
 
@@ -68,7 +68,7 @@ var lima = {
     },
 
     productRandomcust: function () {
-        return this.randomcust() * this.avg;
+        return Math.round(this.randomcust() * this.avg);
     },
 };
 
@@ -85,6 +85,49 @@ console.log(tokyo.cookiesPerHour);
 console.log(dubai.cookiesPerHour);
 console.log(paris.cookiesPerHour);
 console.log(lima.cookiesPerHour);
+
+// printing the array in unordered lists 
+var cookieListSeattle = document.getElementById('cookieSeattle');
+
+// seattleList.textContent = seattle.cookiesPerHour;
+
+for (var i = 0; i < timeArray.length; i++) {
+    var seattleList = document.createElement('li');
+    seattleList.textContent = `${timeArray[i]}: ${seattle.cookiesPerHour[i]} cookies`;
+    cookieListSeattle.append(seattleList);
+}
+
+var cookieListTokyo = document.getElementById('cookieTokyo');
+
+for (var i = 0; i < timeArray.length; i++) {
+    var tokyoList = document.createElement('li');
+    tokyoList.textContent = `${timeArray[i]}: ${tokyo.cookiesPerHour[i]} cookies`;
+    cookieListTokyo.append(tokyoList);
+}
+
+var cookieListDubai = document.getElementById('cookieDubai');
+
+for (var i = 0; i < timeArray.length; i++) {
+    var dubaiList = document.createElement('li');
+    dubaiList.textContent = `${timeArray[i]}: ${dubai.cookiesPerHour[i]} cookies`;
+    cookieListDubai.append(dubaiList);
+}
+
+var cookieListParis = document.getElementById('cookieParis');
+
+for (var i = 0; i < timeArray.length; i++) {
+    var parisList = document.createElement('li');
+    parisList.textContent = `${timeArray[i]}: ${paris.cookiesPerHour[i]} cookies`;
+    cookieListParis.append(parisList);
+}
+
+var cookieListLima = document.getElementById('cookieLima');
+
+for (var i = 0; i < timeArray.length; i++) {
+    var limaList = document.createElement('li');
+    limaList.textContent = `${timeArray[i]}: ${lima.cookiesPerHour[i]} cookies`;
+    cookieListLima.append(limaList);
+}
 
 
 
