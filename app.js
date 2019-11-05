@@ -111,6 +111,8 @@ var lima = {
   }
 };
 
+// **************************************************************************
+
 for (var i = 0; i < timeArray.length; i++) {
   seattle.cookiesPerHour.push(seattle.productRandomcust());
   tokyo.cookiesPerHour.push(tokyo.productRandomcust());
@@ -118,7 +120,6 @@ for (var i = 0; i < timeArray.length; i++) {
   paris.cookiesPerHour.push(paris.productRandomcust());
   lima.cookiesPerHour.push(lima.productRandomcust());
 };
-
 
 // printing the array in unordered lists 
 var cookieListSeattle = document.getElementById('cookieSeattle');
@@ -132,8 +133,7 @@ var seattleTotal = document.createElement('li');
 seattleTotal.textContent = `Total: ${seattle.totalCookies()} cookies`;
 cookieListSeattle.append(seattleTotal);
 
-// Total: 875 cookies
-
+// -----------------------------------
 
 var cookieListTokyo = document.getElementById('cookieTokyo');
 
@@ -146,7 +146,7 @@ var tokyoTotal = document.createElement('li');
 tokyoTotal.textContent = `Total: ${tokyo.totalCookies()} cookies`;
 cookieListTokyo.append(tokyoTotal);
 
-// *******************************
+// -----------------------------------
 var cookieListDubai = document.getElementById('cookieDubai');
 
 for (var i = 0; i < timeArray.length; i++) {
@@ -158,7 +158,7 @@ var dubaiTotal = document.createElement('li');
 dubaiTotal.textContent = `Total: ${dubai.totalCookies()} cookies`;
 cookieListDubai.append(dubaiTotal);
 
-// *******************************
+// -----------------------------------
 
 var cookieListParis = document.getElementById('cookieParis');
 
@@ -171,7 +171,7 @@ var parisTotal = document.createElement('li');
 parisTotal.textContent = `Total: ${paris.totalCookies()} cookies`;
 cookieListParis.append(parisTotal);
 
-// *******************************
+// -----------------------------------
 var cookieListLima = document.getElementById('cookieLima');
 
 for (var i = 0; i < timeArray.length; i++) {
@@ -184,7 +184,6 @@ var limaTotal = document.createElement('li');
 limaTotal.textContent = `Total: ${lima.totalCookies()} cookies`;
 cookieListLima.append(limaTotal);
 
-// *******************************
 
 
 
