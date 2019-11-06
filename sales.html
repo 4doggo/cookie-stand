@@ -10,17 +10,21 @@
 <body>
     <p id="click-me"> Click me!</p>
 
-    <form id="animal-form">
+    <form id="store-form">
         <fieldset>
-            <label for="name"> Name: </label>
+            <label for="name"> Store Name: </label>
             <input name="name" type="text" />
 
-            <label for="weight"> Weight: </label>
-            <input name="weight" type="text" />
+            <label for="minAmount"> Minimum Amount of Customers: </label>
+            <input name="minAmount" type="text" />
 
-            <input name="test" type="number" />
+            <label for="maxAmount"> Maximum Amount of Customers: </label>
+            <input name="maxAmount" type="text" />
+
+            <label for="avgAmount"> Average Amount of Cookies </label>
+            <input name="avgAmount" type="text" />
         </fieldset>
-        <button type="submit"> Add New Animal </button>
+        <button type="submit"> Add New Store </button>
     </form>
 
     <table id="allStoreData">
