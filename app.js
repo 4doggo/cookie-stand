@@ -69,20 +69,36 @@ function submissionHandler(event) {
 
   var newStoreSubmission = new Store(cityName, min, max, avg);
 
-
   allStoresArray.push(newStoreSubmission);
 
   console.log(allStoresArray);
 }
 
+// function renderOfStores(domReference) {
+
+//   var tr = document.createElement('tr');
+
+//   for (var i = 0; i < timeArray.length; i++) {
+
+//     tr.textContent = allStoresArray[i];
+
+//     tr.append(tr);
+//   }
+//   domReference.append(tr);
+// }
+
+// renderOfStores();
+
+
+
 //-------------------------------------------------------------------------------
 
-var paragraph = document.getElementById('click-me');
+// var paragraph = document.getElementById('click-me');
 
-paragraph.addEventListener('click', function (event) {
-  var table = document.getElementById('store-form');
-  table.innerHTML = '';
-});
+// paragraph.addEventListener('click', function (event) {
+//   var table = document.getElementById('store-form');
+//   table.innerHTML = '';
+// });
 
 function hoursOfOperation() {
   var table = document.getElementById('allStoreData');
