@@ -74,21 +74,6 @@ function submissionHandler(event) {
   console.log(allStoresArray);
 }
 
-// function renderOfStores(domReference) {
-
-//   var tr = document.createElement('tr');
-
-//   for (var i = 0; i < timeArray.length; i++) {
-
-//     tr.textContent = allStoresArray[i];
-
-//     tr.append(tr);
-//   }
-//   domReference.append(tr);
-// }
-
-// renderOfStores();
-
 
 
 //-------------------------------------------------------------------------------
@@ -138,6 +123,20 @@ tokyo.render();
 dubai.render();
 paris.render();
 lima.render();
+
+function cleanScreenAndRenderAll() {
+
+  var tableReference = document.getElementById('store-form');
+  tableReference.innerHTML = '';
+  hoursOfOperation();
+
+  for (var i = 0; i < newStoreSubmission.length; i++) {
+    var allCells = newStoreSubmission[i];
+
+    allCells.render();
+  }
+}
+cleanScreenAndRenderAll();
 
 
 
