@@ -77,8 +77,6 @@ function totalOfTotal() {
   }
 }
 
-
-
 totalOfTotal();
 hoursOfOperation();
 seattle.render();
