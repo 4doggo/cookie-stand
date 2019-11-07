@@ -78,25 +78,26 @@ function totalOfTotal() {
 }
 
 
+
+totalOfTotal();
+hoursOfOperation();
+seattle.render();
+tokyo.render();
+dubai.render();
+paris.render();
+lima.render();
+
 function cleanScreenAndRenderAll() {
 
   var tableReference = document.getElementById('store-form');
   tableReference.innerHTML = '';
-  hoursOfOperation(tableReference);
 
   for (var i = 0; i < allStoresArray.length; i++) {
     var currentStore = allStoresArray[i];
 
     currentStore.render(tableReference);
   }
-  totalOfTotal();
 }
-
-seattle.render();
-tokyo.render();
-dubai.render();
-paris.render();
-lima.render();
 
 //-------------------------------------------------------------------------------
 // FORMS
@@ -113,10 +114,10 @@ form.addEventListener('submit', function (event) {
   var avg = event.target.avgAmount.value;
 
   var newStoreSubmission = new Store(cityName, min, max, avg);
-
+  newStoreSubmission.render();
   allStoresArray.push(newStoreSubmission);
 
   cleanScreenAndRenderAll();
-}
-);
+});
 //-------------------------------------------------------------------------------
+
