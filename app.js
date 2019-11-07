@@ -50,40 +50,6 @@ var paris = new Store('Paris', 20, 38, 2.3);
 var lima = new Store('Lima', 2, 16, 4.6);
 
 var allStoresArray = [seattle, tokyo, dubai, paris, lima];
-console.log(allStoresArray);
-
-//-------------------------------------------------------------------------------
-// FORMS
-//-------------------------------------------------------------------------------
-
-var form = document.getElementById('store-form');
-form.addEventListener('submit', submissionHandler);
-
-function submissionHandler(event) {
-  event.preventDefault();
-
-  var cityName = event.target.name.value;
-  var min = event.target.minAmount.value;
-  var max = event.target.maxAmount.value;
-  var avg = event.target.avgAmount.value;
-
-  var newStoreSubmission = new Store(cityName, min, max, avg);
-
-  allStoresArray.push(newStoreSubmission);
-
-  console.log(allStoresArray);
-}
-
-
-
-//-------------------------------------------------------------------------------
-
-// var paragraph = document.getElementById('click-me');
-
-// paragraph.addEventListener('click', function (event) {
-//   var table = document.getElementById('store-form');
-//   table.innerHTML = '';
-// });
 
 function hoursOfOperation() {
   var table = document.getElementById('allStoreData');
@@ -97,7 +63,6 @@ function hoursOfOperation() {
       appendChild(document.createTextNode(timeArray[i]));
   }
 }
-
 
 function totalOfTotal() {
   var table = document.getElementById('allStoreData');
@@ -113,10 +78,19 @@ function totalOfTotal() {
 }
 
 
-console.log(seattle.totalCookies());
-console.log(seattle.total);
-hoursOfOperation();
-totalOfTotal();
+function cleanScreenAndRenderAll() {
+
+  var tableReference = document.getElementById('store-form');
+  tableReference.innerHTML = '';
+  hoursOfOperation(tableReference);
+
+  for (var i = 0; i < allStoresArray.length; i++) {
+    var currentStore = allStoresArray[i];
+
+    currentStore.render(tableReference);
+  }
+  totalOfTotal();
+}
 
 seattle.render();
 tokyo.render();
@@ -124,25 +98,25 @@ dubai.render();
 paris.render();
 lima.render();
 
-function cleanScreenAndRenderAll() {
+//-------------------------------------------------------------------------------
+// FORMS
+//-------------------------------------------------------------------------------
 
-  var tableReference = document.getElementById('store-form');
-  tableReference.innerHTML = '';
-  hoursOfOperation();
+var form = document.getElementById('store-form');
 
-  for (var i = 0; i < newStoreSubmission.length; i++) {
-    var allCells = newStoreSubmission[i];
+form.addEventListener('submit', function (event) {
+  event.preventDefault();
 
-    allCells.render();
-  }
+  var cityName = event.target.name.value;
+  var min = event.target.minAmount.value;
+  var max = event.target.maxAmount.value;
+  var avg = event.target.avgAmount.value;
+
+  var newStoreSubmission = new Store(cityName, min, max, avg);
+
+  allStoresArray.push(newStoreSubmission);
+
+  cleanScreenAndRenderAll();
 }
-cleanScreenAndRenderAll();
-
-
-
-
-
-
-
-
-
+);
+//-------------------------------------------------------------------------------
