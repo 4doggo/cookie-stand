@@ -7,8 +7,38 @@
     }
     
     title {
+        font-family: 'Poppins', sans-serif;
         text-align: center;
         margin-top: 50px;
         font-size: 20px;
-
     }
+
+    h1{
+        font-family: 'Poppins', sans-serif;
+        font-size: 80px;
+        text-shadow: gray;
+    }
+
+    h2{
+        font-family: 'Poppins', sans-serif;
+        font-style: oblique;
+    }
+
+    #allStoreData{
+        font-family: Arial, Helvetica, sans-serif;
+    /* background-color: gray; */
+    
+    }
+
+    #store-form{
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 10px;
+        box-shadow: 25px;
+    }
+
+
+    footer {
+            font-family: 'Poppins', sans-serif;
+            
+
+        }
