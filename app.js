@@ -64,31 +64,37 @@ function hoursOfOperation() {
   }
 }
 
-function totalOfTotal() {
-  var table = document.getElementById('allStoreData');
-
-  var td = document.createElement('tfoot');
-
-  table.appendChild(td);
-
-  for (var i = 0; i < timeArray.length; i++) {
-    td.appendChild(document.createElement('td')).
-      appendChild(document.createTextNode(timeArray[i]));
-  }
-}
-
-
-totalOfTotal();
 hoursOfOperation();
 seattle.render();
 tokyo.render();
 dubai.render();
 paris.render();
 lima.render();
+totalFooter();
 
 
+function totalFooter() {
+  var table = document.getElementById('allStoreData');
 
+  var tr = document.createElement('tr');
 
+  var firstDailyTotal = document.createElement('td');
+  firstDailyTotal.textContent = 'Daily Totals';
+
+  tr.append(firstDailyTotal);
+
+  for (var i = 0; i < allStoresArray[0].cookiesPerHour.length; i++) {
+    var total = 0;
+    for (var x = 0; x < allStoresArray.length; x++) {
+      total += allStoresArray[x].cookiesPerHour[i];
+    }
+    console.log(`total ${total}`);
+    var td = document.createElement('td');
+    td.textContent = total;
+    tr.append(td);
+  }
+  table.append(tr);
+}
 
 function cleanScreenAndRenderAll() {
 
@@ -100,6 +106,7 @@ function cleanScreenAndRenderAll() {
 
     currentStore.render(tableReference);
   }
+  totalFooter();
 }
 
 //-------------------------------------------------------------------------------

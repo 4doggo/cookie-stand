@@ -19,10 +19,14 @@
         text-shadow: gray;
     }
 
+    h2{
+        font-family: 'Poppins', sans-serif;
+        font-style: oblique;
+    }
 
     #allStoreData{
         font-family: Arial, Helvetica, sans-serif;
-    background-color: gray;
+    /* background-color: gray; */
     
     }
 
