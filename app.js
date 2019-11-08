@@ -77,6 +77,7 @@ function totalOfTotal() {
   }
 }
 
+
 totalOfTotal();
 hoursOfOperation();
 seattle.render();
@@ -85,9 +86,13 @@ dubai.render();
 paris.render();
 lima.render();
 
+
+
+
+
 function cleanScreenAndRenderAll() {
 
-  var tableReference = document.getElementById('store-form');
+  var tableReference = document.getElementById('allStoreData');
   tableReference.innerHTML = '';
 
   for (var i = 0; i < allStoresArray.length; i++) {
